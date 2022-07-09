@@ -2,8 +2,6 @@ import { CloseIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  FormControl,
-  FormLabel,
   Input,
   Popover,
   PopoverArrow,
@@ -13,7 +11,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import useAuth from "hooks/useAuth";
 import { useState } from "react";
 

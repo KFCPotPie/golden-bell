@@ -1,10 +1,8 @@
 import { Box, Button, Divider, Input, Stack, Text } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "ColorModeSwitcher";
 import LoginLogoutButton from "components/LoginLogoutButton";
-import useAuth from "hooks/useAuth";
 
 const InputComponents = () => {
-  const { auth } = useAuth();
   return (
     <Box p={4}>
       <Text fontSize="2xl" fontWeight={"semibold"} mb={4}>
@@ -45,9 +43,9 @@ const InputComponents = () => {
       <Text fontSize="2xl" fontWeight={"semibold"} mb={4}>
         ColorMode Switcher
       </Text>
-      <Stack spacing={4} direction="column" align="center">
+      <Box>
         <ColorModeSwitcher />
-      </Stack>
+      </Box>
     </Box>
   );
 };
