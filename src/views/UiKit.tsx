@@ -1,62 +1,64 @@
-import { ColorModeSwitcher } from "ColorModeSwitcher";
-import LoginLogoutButton from "components/LoginLogoutButton";
-import useAuth from "hooks/useAuth";
 import {
-    Box,
-    Tab,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
-    Text,
+  Box,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
 } from "@chakra-ui/react";
 import InputComponents from "directories/InputComponents";
 
 const UiKit = () => {
-    const { auth } = useAuth();
-    return (
-        <Box p={10} border="solid red 2px">
-            <Text fontSize="6xl">UiKit</Text>
-            {/*  // insert description here of what a uikit is, separate the items in here into 
+  return (
+    <Box p={10}>
+      <Text fontSize="6xl">UiKit</Text>
+      {/*  // insert description here of what a uikit is, separate the items in here into 
                 tabs, input, display, typography, overlay, navigation
             */}
-            <Text fontSize="2xl">
-                This is a ui kit for the golden-bell project. Fonts: Verdana
-                Bold/Regular Print: DINCond-Bold HELVETICA & Neue Std
-            </Text>
-            <p>{auth ? "Logged in" : "Not logged in"}</p>
-            <LoginLogoutButton />
-            <ColorModeSwitcher />
+      <Text fontSize="2xl">This is a ui kit for the golden-bell project.</Text>
 
-            <Tabs>
-                <TabList>
-                    <Tab>Input</Tab>
-                    <Tab>Display</Tab>
-                    <Tab>Typography</Tab>
-                    <Tab>Overlay</Tab>
-                    <Tab>Navigation</Tab>
-                </TabList>
+      <Tabs>
+        <TabList>
+          <Tab>Input</Tab>
+          <Tab>Typography</Tab>
+          <Tab>Display</Tab>
 
-                <TabPanels>
-                    <TabPanel>
-                        <InputComponents />
+          <Tab>Overlay</Tab>
+          <Tab>Navigation</Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+            <InputComponents />
+          </TabPanel>
+
+          <TabPanel>
+            <TypographyComponents />
+          </TabPanel>
+          {/* <TabPanel>
+                        <DisplayComponents />
                     </TabPanel>
-                    {/* <TabPanel>
-                        <Displays />
+                    <TabPanel>
+                        <OverlayComponents />
                     </TabPanel>
                     <TabPanel>
-                        <Typography />
-                    </TabPanel>
-                    <TabPanel>
-                        <Overlays />
-                    </TabPanel>
-                    <TabPanel>
-                        <Navigation />
+                        <NavigationComponents />
                     </TabPanel> */}
-                </TabPanels>
-            </Tabs>
-        </Box>
-    );
+        </TabPanels>
+      </Tabs>
+    </Box>
+  );
 };
 
 export default UiKit;
+
+const TypographyComponents = () => {
+  return (
+    <Box p={4}>
+      <Text>
+        Fonts: Verdana Bold/Regular Print: DINCond-Bold HELVETICA & Neue Std
+      </Text>
+    </Box>
+  );
+};
